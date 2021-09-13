@@ -5,36 +5,40 @@
 
 ### 推奨構成
 
-    物理メモリ：2GB以上推奨
-    空きディスク容量：512MB以上推奨
-        データベースおよびリスト設定情報の領域はほとんど消費しませんが、
-        投稿保管庫 (アーカイブ) は、保存メッセージ総量の3倍程度が見込まれます。
+  - 物理メモリ：2GB以上推奨
+  - 空きディスク容量：512MB以上推奨
+
+    データベースおよびリスト設定情報の領域はほとんど消費しませんが、
+    投稿保管庫 (アーカイブ) は、保存メッセージ総量の3倍程度が見込まれます。
 
 ## ネットワーク要件
 
 ### ネットワークセキュリティ
 
-・セキュリティグループ設定
- - インバウンド
-   HTTP/HTTPS(80/443)
-   SMTP(25)
+セキュリティグループ設定
 
- - アウトバウンド
-   SMTP(25)
+  - インバウンド
+
+    HTTP/HTTPS(80/443)
+
+    SMTP(25)
+
+  - アウトバウンド
+
+    SMTP(25)
 
 
 ## SMTP制限
 
 ### AWSでのメール送信制限解除
-https://aws.amazon.com/jp/premiumsupport/knowledge-center/ec2-port-25-throttle/
 
-・この申請フォームで、制限解除するIPアドレスを指定する。
+  - [申請フォーム](https://aws.amazon.com/jp/premiumsupport/knowledge-center/ec2-port-25-throttle/)で、制限解除するIPアドレスを指定する。
 
-・それと同時に、そのIPアドレスの逆引きレコードの値を指定する。申請が受理されると逆引きが設定されます。
+  - それと同時に、そのIPアドレスの逆引きレコードの値を指定する。申請が受理されると逆引きが設定されます。
 
-・申請なしでも少量のメールは出せます。
+  - 申請なしでも少量のメールは出せます。
 
-・Admin権限持ったユーザで実施します。
+  - Admin権限持ったユーザで実施します。
 
 Elastic IPs information でホスト名を設定します。
 ここで設定したホスト名を逆引きレコードに自動的に設定してくれるのでこの設定は必須です。
@@ -81,31 +85,31 @@ AMI設定手順
 
 ### 2. 初期設定
 
- 2-1. インスタンスにSSHでアクセスします。ログインユーザは「admin」です。
+  1. インスタンスにSSHでアクセスします。ログインユーザは「admin」です。
 
- 2-2. ログインするとメニューが表示されます。
+  2. ログインするとメニューが表示されます。
 
-<img src="images/2-2.JPG" width="70%">
+     <img src="images/2-2.JPG" width="70%">
 
      「(Re)configure Sympa」を選択します。「1」を入力し、Enterキーを押します。
 
 以後、Postfixの基本設定を行います。
 
- 2-3. Postfix Configuration
+  3. Postfix Configuration
  
-<img src="images/2-3-1.png" width="70%">
+     <img src="images/2-3-1.png" width="70%">
 
      「OK」を選択、Enterキーを押します。
 
-<img src="images/2-3-2.png" width="70%">
+     <img src="images/2-3-2.png" width="70%">
 
      通常は「Internet Site」、「Internet with smarthost」のいずれかを選択します。
 
---------------------------------------------------------------------------------------------------
+     ----
 
- 2-4. System mail name
+  4. System mail name
 
-<img src="images/2-4.png" width="70%">
+     <img src="images/2-4.png" width="70%">
 
      Postfixが使用するメールドメイン名の初期値を設定します。
      これは「必要なパラメータ」で決めたメールドメイン名と同じでも、
@@ -115,11 +119,11 @@ AMI設定手順
 
      入力後「OK」を選択、Enterキーを押します。
      
---------------------------------------------------------------------------------------------------
+     ----
 
- 2-5. Root and postmaster mail recipient
+  5. Root and postmaster mail recipient
 
-<img src="images/2-5.png" width="70%">
+     <img src="images/2-5.png" width="70%">
 
      実在するメールアドレスを設定します。
      設定例【test@example.jp】
@@ -127,11 +131,11 @@ AMI設定手順
      入力後「OK」を選択、Enterキーを押します。
      
 
---------------------------------------------------------------------------------------------------
+     ----
 
- 2-6. Other destinations to accept mail for
+  6. Other destinations to accept mail for
 
-<img src="images/2-6.png" width="70%">
+     <img src="images/2-6.png" width="70%">
 
      特に設定すべきものがなければ、変更しなくてもかまいません。
      「blank for none」と表示されますが、空白とした場合は、
@@ -139,22 +143,22 @@ AMI設定手順
 
      入力後「OK」を選択、Enterキーを押します。
 
---------------------------------------------------------------------------------------------------
+     ----
 
- 2-7. Force synchronous updates on mail queue?
+  7. Force synchronous updates on mail queue?
 
-<img src="images/2-7.png" width="70%">
+     <img src="images/2-7.png" width="70%">
 
      特に理由がないかぎり変更不要です。
      【No】
 
      選択後、Enterキーを押します。
 
---------------------------------------------------------------------------------------------------
+     ----
 
- 2-8. Local networks
+  8. Local networks
 
-<img src="images/2-8.png" width="70%">
+     <img src="images/2-8.png" width="70%">
 
      メッセージの中継を受けるネットワークブロックを設定します。
      
@@ -162,50 +166,52 @@ AMI設定手順
 
      入力後「OK」を選択、Enterキーを押します。
 
---------------------------------------------------------------------------------------------------
+     ----
 
- 2-9.  Mailbox size limit (bytes)
+  9. Mailbox size limit (bytes)
 
-<img src="images/2-9.png" width="70%">
+     <img src="images/2-9.png" width="70%">
 
      特に理由がないかぎり変更不要です。
      【0】(無制限)
 
      入力後「OK」を選択、Enterキーを押します。
 
---------------------------------------------------------------------------------------------------
+     ----
 
- 2-10. Local address extension character
+ 10. Local address extension character
 
-<img src="images/2-10.png" width="70%">
+     <img src="images/2-10.png" width="70%">
 
      「+」のままにしておかなければなりません。
      【+】
 
      「OK」を選択、Enterキーを押します。
 
---------------------------------------------------------------------------------------------------
+     ----
 
- 2-11. Internet protocols to use
+ 11. Internet protocols to use
 
-<img src="images/2-11.png" width="70%">
+     <img src="images/2-11.png" width="70%">
 
      適切なものを選択します。
      設定例【all】
 
      「OK」を選択、Enterキーを押します。
 
---------------------------------------------------------------------------------------------------
+     ----
 
-  3. 続いてSympaの初期設定を行います。
+### 3. Sympaの初期設定
 
- 3-1. Sympa hostname
+続いてSympaの初期設定を行います。
 
-<img src="images/3-1-1.png" width="70%">
+  1. Sympa hostname
+
+     <img src="images/3-1-1.png" width="70%">
 
      「OK」を選択、Enterキーを押します。
 
-<img src="images/3-1-2.png" width="70%">
+     <img src="images/3-1-2.png" width="70%">
 
       Sympaのホスト名を入力します。
       これは「必要なパラメータ」で決めたメールドメイン名を設定します。
@@ -213,41 +219,41 @@ AMI設定手順
 
      「OK」を選択、Enterキーを押します。
 
---------------------------------------------------------------------------------------------------
+     ----
 
- 3-2. Listmaster email address(es)
+  2. Listmaster email address(es) <a id="section-3-2"/>
 
-<img src="images/3-2.png" width="70%">
+     <img src="images/3-2.png" width="70%">
 
      これは「必要なパラメータ」で決めたリストシステム管理者のメールアドレスを設定します。
      設定例【test@example.jp】
 
      「OK」を選択、Enterキーを押します。
 
---------------------------------------------------------------------------------------------------
+     ----
 
- 3-3. Reinstall database for sympa?
+  3. Reinstall database for sympa?
 
-<img src="images/3-3-1.png" width="70%">
+     <img src="images/3-3-1.png" width="70%">
 
      「OK」を選択、Enterキーを押します。
 
-<img src="images/3-3-2.png" width="70%">
+     <img src="images/3-3-2.png" width="70%">
 
       初回は必ず「Yes」を選択します。
      【Yes】
 
      「OK」を選択、Enterキーを押します。
 
---------------------------------------------------------------------------------------------------
+     ----
 
- 3-4. Database type to be used by sympa
+  4. Database type to be used by sympa
 
-<img src="images/3-4-1.png" width="70%">
+     <img src="images/3-4-1.png" width="70%">
 
      「OK」を選択、Enterキーを押します。
 
-<img src="images/3-4-2.png" width="70%">
+     <img src="images/3-4-2.png" width="70%">
 
      使用するデータベースを選択します。「mysql」を推奨します。以後は「mysql」を選択した手順を記載します。
      「SQLite」を選択した場合は設定後、手順3-11にスキップします。
@@ -257,10 +263,11 @@ AMI設定手順
 
      以後、データベースの詳細設定と作成が行われます。
 
---------------------------------------------------------------------------------------------------
- 3-5. Connection method for MySQL database of sympa
+     ----
 
-<img src="images/3-5.png" width="70%">
+  5. Connection method for MySQL database of sympa
+
+     <img src="images/3-5.png" width="70%">
 
       Unix socket
       TCP/IP
@@ -269,100 +276,100 @@ AMI設定手順
 
      「OK」を選択、Enterキーを押します。
 
---------------------------------------------------------------------------------------------------
+     ----
 
- 3-6. MySQL database name for sympa
+  6. MySQL database name for sympa
 
-<img src="images/3-6.png" width="70%">
+     <img src="images/3-6.png" width="70%">
 
      設定例【sympa】
 
      「OK」を選択、Enterキーを押します。
 
---------------------------------------------------------------------------------------------------
+     ----
 
- 3-7. MySQL username for sympa
+  7. MySQL username for sympa
 
-<img src="images/3-7-1.png" width="70%">
+     <img src="images/3-7-1.png" width="70%">
 
      「OK」を選択、Enterキーを押します。
 
-<img src="images/3-7-2.png" width="70%">
+     <img src="images/3-7-2.png" width="70%">
      
      設定例【sympa@localhost】
      
      「OK」を選択、Enterキーを押します。
 
---------------------------------------------------------------------------------------------------
+     ----
 
- 3-8. MySQL application password for sympa
+  8. MySQL application password for sympa
 
-<img src="images/3-8.png" width="70%">
+    <img src="images/3-8.png" width="70%">
      
      任意のパスワードを設定してください
      【●●●●●】
 
      「OK」を選択、Enterキーを押します。
 
---------------------------------------------------------------------------------------------------
+     ----
 
- 3-9. Password confirmation
+  9. Password confirmation
 
-<img src="images/3-9.png" width="70%">
+     <img src="images/3-9.png" width="70%">
      
      前項で設定したパスワードを再入力します。
      【●●●●●】
 
      「OK」を選択、Enterキーを押します。
 
---------------------------------------------------------------------------------------------------
+     ----
 
- 3-10. Name of the database's administrative user
+ 10. Name of the database's administrative user
 
-<img src="images/3-10.png" width="70%">
+     <img src="images/3-10.png" width="70%">
 
      
      設定例【root】
 
      「OK」を選択、Enterキーを押します。
 
---------------------------------------------------------------------------------------------------
+     ----
 
- 3-11. URL to access WWSympa
+ 11. URL to access WWSympa <a id="section-3-11"/>
 
-<img src="images/3-11.png" width="70%">
+     <img src="images/3-11.png" width="70%">
     
      これは「必要なパラメータ」で決めたウェブサイトURLプリフィクスを設定します。
      設定例【http://amidesympa.example.org/wws】
 
      「OK」を選択、Enterキーを押します。
 
---------------------------------------------------------------------------------------------------
+     ----
 
- 3-12. Which Web Server(s) are you running?
+ 12. Which Web Server(s) are you running?
 
-<img src="images/3-12.png" width="70%">
+     <img src="images/3-12.png" width="70%">
      
      利用するWeb Serverを選択します。Apache2を推奨します。
       設定例【Apache2】
 
      「OK」を選択、Enterキーを押します。
 
---------------------------------------------------------------------------------------------------
+     ----
 
- 3-13. Do you want the sympa SOAP server to be used?
+ 13. Do you want the sympa SOAP server to be used?
 
-<img src="images/3-13.png" width="70%">
+     <img src="images/3-13.png" width="70%">
 
      設定例【No】
 
      「OK」を選択、Enterキーを押します。
 
---------------------------------------------------------------------------------------------------
+     ----
 
- 3-14. Should sympanewaliases-wrapper be setuid root?
+ 14. Should sympanewaliases-wrapper be setuid root?
 
-<img src="images/3-14.png" width="70%">
+     <img src="images/3-14.png" width="70%">
 
      「Yes」を選択します。
      ※このオプションは将来廃止予定ですが、現状では「Yes」を選択しないと正しく動作しません。
@@ -370,11 +377,11 @@ AMI設定手順
 
      「OK」を選択、Enterキーを押します。
 
---------------------------------------------------------------------------------------------------
+     ----
 
- 3-15. Should the web archives and the bounce directory be removed?
+ 15. Should the web archives and the bounce directory be removed?
 
-<img src="images/3-15.png" width="70%">
+     <img src="images/3-15.png" width="70%">
      
      残っているデータを全て削除する場合は「Yes」を選択します。
      初回なので「No」を選択します。
@@ -382,7 +389,7 @@ AMI設定手順
 
      「OK」を選択、Enterキーを押します。
 
---------------------------------------------------------------------------------------------------
+     ----
 
   ★. 初期設定が完了するとメニューに戻ります。
 
@@ -390,51 +397,54 @@ AMI設定手順
 
 --------------------------------------------------------------------------------------------------
 
-  4. 続いてSympaのWeb管理画面から操作を行います。
+### 4. Web管理画面からの操作
 
- 4-1. Webブラウザから「手順3-11」で設定したURLにアクセスします。
+続いてSympaのWeb管理画面から操作を行います。
 
-<img src="images/4-1.png" width="70%">
+  1. Webブラウザから「手順[3-11](#section-3-11)」で設定したURLにアクセスします。
+
+     <img src="images/4-1.png" width="70%">
 
      【http://amidesympa.example.org/wws】
      
      ようこそ画面が表示されることを確認します。
 
---------------------------------------------------------------------------------------------------
+     ----
 
- 4-2. 右上のログインボタンをクリックし、ログイン画面に遷移します。
+  2. 右上のログインボタンをクリックし、ログイン画面に遷移します。
 
-<img src="images/4-2.png" width="70%">
+     <img src="images/4-2.png" width="70%">
      
      画面下の【まだログインしたことがない】を選択します。
 
---------------------------------------------------------------------------------------------------
+     ----
 
- 4-3. あなたのメールアドレス
+  3. あなたのメールアドレス
 
-![図27]
+     ![図27]
 
-     3-2. Listmaster email address(es) で入力したメーリングリスト管理者のメールアドレスを入力し、
+     [3-2](#section-3-2). Listmaster email address(es) で入力したメーリングリスト管理者のメールアドレスを入力し、
      「初期パスワードの取り寄せ」ボタンをクリックします。
 
---------------------------------------------------------------------------------------------------
+     ----
 
- 4-4. メーリングリスト管理者宛てに初期パスワードが届きます。
+  4. メーリングリスト管理者宛てに初期パスワードが届きます。
 
-<img src="images/4-4.png" width="70%">
+     <img src="images/4-4.png" width="70%">
 
      ※画像はサンプルです。
      
      URLをクリックしてパスワード設定画面に遷移します。
 
---------------------------------------------------------------------------------------------------
+     ----
 
- 4-5. メーリングリスト管理者のパスワードを設定します。
+  5. メーリングリスト管理者のパスワードを設定します。
 
-<img src="images/4-5.png" width="70%">
+     <img src="images/4-5.png" width="70%">
 
 
---------------------------------------------------------------------------------------------------
+     ----
+
 XXXXX下記は試せてません・・・XXXXX
 
 
@@ -462,25 +472,33 @@ XXXXX下記は試せてません・・・XXXXX
 
   * 接続を切断するには、メニューで「0」を選択します。
 
- 3-15. postfix手動設定(myhostname)
+### 3.
+
+ 15. postfix手動設定(myhostname)
  
-<img src="images/2-2.png" width="70%">
+     <img src="images/2-2.png" width="70%">
 
      「Launch shell」を選択します。「9」を入力し、Enterキーを押します。
 
-<img src="images/4-1.png" width="70%">
+     <img src="images/4-1.png" width="70%">
 
      プロンプトが表示されたら下記コマンドにてrootにスイッチします。
-     
+
+     ``` bash
      $ sudo su -
-     
+     ```
+
      下記コマンドにてmyhostnameの設定を変更します。
-     
+
+     ``` bash
      # postconf myhostname=xxxxxxxxxx
-     
+     ```
+
      xxxxxxxxは「3-1. Sympa hostname」で設定したホスト名を入力します。
 
      postfixをreloadします。
-     
+
+     ``` bash
      # systemctl reload postfix
+     ```
 
