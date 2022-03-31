@@ -285,7 +285,7 @@ AMI設定手順
 
 続いてSympaのWeb管理画面から操作を行います。
 
-  1. Webブラウザから「手順[3-11](#section-3-11)」で設定したURLにアクセスします。
+  1. Webブラウザから「手順[3-3](#section-3-3)」で設定したURLにアクセスします。
 
      <img src="images/sympa_018.JPG" width="70%">
 
