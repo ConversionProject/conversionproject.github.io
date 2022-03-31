@@ -128,6 +128,7 @@ AMI設定手順
      <img src="images/sympa_005.JPG" width="70%">
 
      実在するメールアドレスを設定します。
+     
      設定例【test@example.jp】
 
      入力後「OK」を選択、Enterキーを押します。
@@ -168,6 +169,7 @@ AMI設定手順
 
       Sympaのホスト名を入力します。
       これは「必要なパラメータ」で決めたメールドメイン名を設定します。
+
       設定例【amidesympa.example.org】
 
      「OK」を選択、Enterキーを押します。
@@ -179,6 +181,7 @@ AMI設定手順
      <img src="images/sympa_009.JPG" width="70%">
 
      これは「必要なパラメータ」で決めたリストシステム管理者のメールアドレスを設定します。
+
      設定例【test@example.jp】
 
      「OK」を選択、Enterキーを押します。
@@ -190,6 +193,7 @@ AMI設定手順
      <img src="images/sympa_010.JPG" width="70%">
     
      これは「必要なパラメータ」で決めたウェブサイトURLプリフィクスを設定します。
+
      設定例【http://amidesympa.example.org/wws】
 
      「OK」を選択、Enterキーを押します。
@@ -201,6 +205,7 @@ AMI設定手順
      <img src="images/sympa_011.JPG" width="70%">
      
      利用するWeb Serverを選択します。Apache2を推奨します。
+
       設定例【Apache2】
 
      「OK」を選択、Enterキーを押します。
@@ -223,6 +228,7 @@ AMI設定手順
      
      残っているデータを全て削除する場合は「Yes」を選択します。
      初回なので「No」を選択します。
+
      設定例【No】
 
      「OK」を選択、Enterキーを押します。
@@ -235,6 +241,7 @@ AMI設定手順
      
      dbconfig-common を用いてDBを設定します。
      「Yes」を選択します。
+
      設定例【Yes】
 
      「OK」を選択、Enterキーを押します。
@@ -248,7 +255,8 @@ AMI設定手順
 
      使用するデータベースを選択します。「mysql」を推奨します。
      以後は「mysql」を選択した手順を記載します。
-     【mysql】
+
+     設定例【mysql】
 
      「OK」を選択、Enterキーを押します。
 
@@ -259,6 +267,7 @@ AMI設定手順
      <img src="images/sympa_016.JPG" width="70%">
      
      任意のパスワードを設定してください
+
      【●●●●●】
 
      「OK」を選択、Enterキーを押します。
@@ -270,6 +279,7 @@ AMI設定手順
      <img src="images/sympa_017.JPG" width="70%">
      
      前項で設定したパスワードを再入力します。
+
      【●●●●●】
 
      「OK」を選択、Enterキーを押します。
