@@ -159,8 +159,8 @@ AMI設定手順
 続いてSympaの初期設定を行います。
 
   1. Sympa hostname
-
-     <img src="sympa_008.JPG" width="70%">
+     
+     <img src="images/sympa_008.JPG" width="70%">
 
       Sympaのホスト名を入力します。
       これは「必要なパラメータ」で決めたメールドメイン名を設定します。
@@ -169,13 +169,13 @@ AMI設定手順
      「OK」を選択、Enterキーを押します。
 
      ----
+     
+   2. Listmaster email address(es) <a id="section-3-2"/>
 
-  2. Listmaster email address(es) <a id="section-3-2"/>
+      <img src="images/sympa_009.JPG" width="70%">
 
-     <img src="sympa_009.JPG" width="70%">
-
-     これは「必要なパラメータ」で決めたリストシステム管理者のメールアドレスを設定します。
-     設定例【test@example.jp】
+      これは「必要なパラメータ」で決めたリストシステム管理者のメールアドレスを設定します。
+      設定例【test@example.jp】
 
      「OK」を選択、Enterキーを押します。
 
@@ -251,8 +251,8 @@ AMI設定手順
      ----
 
   9. MySQL application password for sympa
-
-    <img src="images/sympa_016.JPG" width="70%">
+　　
+     <img src="images/sympa_016.JPG" width="70%">
      
      任意のパスワードを設定してください
      【●●●●●】
