@@ -85,16 +85,20 @@ AMI設定手順
 
   1. インスタンスにSSHでアクセスします。ログインユーザは「admin」です。
 
+     ----
+     
   2. ログインするとメニューが表示されます。
 
      <img src="images/sympa_001.JPG" width="70%">
 
      「(Re)configure Sympa」を選択します。「1」を入力し、Enterキーを押します。
 
-以後、Postfixの基本設定を行います。
+     以後、Postfixの基本設定を行います。
+
+     ----
 
   3. Postfix Configuration
- 
+
      <img src="images/sympa_002.JPG" width="70%">
 
      「OK」を選択、Enterキーを押します。
@@ -170,12 +174,12 @@ AMI設定手順
 
      ----
      
-   2. Listmaster email address(es) <a id="section-3-2"/>
+  2. Listmaster email address(es) <a id="section-3-2"/>
 
-      <img src="images/sympa_009.JPG" width="70%">
+     <img src="images/sympa_009.JPG" width="70%">
 
-      これは「必要なパラメータ」で決めたリストシステム管理者のメールアドレスを設定します。
-      設定例【test@example.jp】
+     これは「必要なパラメータ」で決めたリストシステム管理者のメールアドレスを設定します。
+     設定例【test@example.jp】
 
      「OK」を選択、Enterキーを押します。
 
@@ -274,7 +278,6 @@ AMI設定手順
 
   ★. 初期設定が完了するとメニューに戻ります。
 
-　[[ここにメーニューを貼る]]
 
 --------------------------------------------------------------------------------------------------
 
