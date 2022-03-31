@@ -1,3 +1,6 @@
+Sympa AMI
+=========
+
 前提条件
 ========
 
@@ -8,9 +11,9 @@
   - 物理メモリ：2GB以上推奨
   - 空きディスク容量：512MB以上推奨
 
-　　多数のリストを作成する場合は、上記以上の物理メモリ、ディスク容量が必要となります。  
+    多数のリストを作成する場合は、上記以上の物理メモリ、ディスク容量が必要となります。
 
-　　データベースおよびリスト設定情報の領域はほとんど消費しませんが、
+    データベースおよびリスト設定情報の領域はほとんど消費しませんが、
     投稿保管庫 (アーカイブ) は、保存メッセージ総量の3倍程度が見込まれます。
 
 ## ネットワーク要件
@@ -60,28 +63,29 @@ Elastic IPs information でホスト名を設定します。
 
     Sympaメーリングリストの管理をWeb GUIで行う場合は必要となります。
     URLのホスト部分は上記メールドメイン名と異なっていても構いません。
-    
-    
+
+
 上記のメールドメイン名およびウェブサイトが名前解決できるようMXレコードやAレコードをDNSサーバに事前に登録しておく必要があります。
 複数のメールドメイン名でSympaを運用する場合、メールドメイン名ごとにこれらのパラメータが必要です。
 リストシステム管理者のメールアドレスについては同じものを設定することもできます。
 ウェブサイトURLプリフィクスについては、そのメールドメインでウェブインタフェースを提供する場合に必要です。その際、異なるメールドメイン同士でのウェブサイトURLプリフィクスは重複してはなりません。
 
-## AMI情報
+AMI情報
+=======
 
   * AMI名
-    
+
     AMI de Sympa 2022-03-16_01 (Debian 11 AMD64)
 
-  * AMIID
+  * AMI ID
 
     ami-01b5f7f5d17362e0d
 
-  * Region
+  * リージョン
 
     us-east-2
-    
-  
+
+
   次回更新は2022/10を予定しております。
 
 
@@ -106,7 +110,7 @@ AMI設定手順
   1. インスタンスにSSHでアクセスします。ログインユーザは「admin」です。
 
      ----
-     
+
   2. ログインするとメニューが表示されます。
 
      <img src="images/sympa_001.JPG" width="70%">
@@ -136,11 +140,11 @@ AMI設定手順
      Postfixが使用するメールドメイン名の初期値を設定します。
      これは「必要なパラメータ」で決めたメールドメイン名と同じでも、
      異なっていてもかまいません。
-     
+
      設定例【amidesympa.example.org】
 
      入力後「OK」を選択、Enterキーを押します。
-     
+
      ----
 
   5. Root and postmaster mail recipient
@@ -148,11 +152,11 @@ AMI設定手順
      <img src="images/sympa_005.JPG" width="70%">
 
      実在するメールアドレスを設定します。
-     
+
      設定例【test@example.jp】
 
      入力後「OK」を選択、Enterキーを押します。
-     
+
 
      ----
 
@@ -184,7 +188,7 @@ AMI設定手順
 続いてSympaの初期設定を行います。
 
   1. Sympa hostname
-     
+
      <img src="images/sympa_008.JPG" width="70%">
 
       Sympaのホスト名を入力します。
@@ -195,7 +199,7 @@ AMI設定手順
      「OK」を選択、Enterキーを押します。
 
      ----
-     
+
   2. Listmaster email address(es) <a id="section-3-2"/>
 
      <img src="images/sympa_009.JPG" width="70%">
@@ -211,7 +215,7 @@ AMI設定手順
   3. URL to access WWSympa <a id="section-3-11"/>
 
      <img src="images/sympa_010.JPG" width="70%">
-    
+
      これは「必要なパラメータ」で決めたウェブサイトURLプリフィクスを設定します。
 
      設定例【http://amidesympa.example.org/wws】
@@ -223,7 +227,7 @@ AMI設定手順
   4. Which Web Server(s) are you running?
 
      <img src="images/sympa_011.JPG" width="70%">
-     
+
      利用するWeb Serverを選択します。Apache2を推奨します。
 
       設定例【Apache2】
@@ -245,7 +249,7 @@ AMI設定手順
   6. Should the web archives and the bounce directory be removed?
 
      <img src="images/sympa_013.JPG" width="70%">
-     
+
      残っているデータを全て削除する場合は「Yes」を選択します。
      初回なので「No」を選択します。
 
@@ -258,7 +262,7 @@ AMI設定手順
   7. Configure database for sympa with dbconfig-common?
 
      <img src="images/sympa_014.JPG" width="70%">
-     
+
      dbconfig-common を用いてDBを設定します。
      「Yes」を選択します。
 
@@ -283,9 +287,9 @@ AMI設定手順
      ----
 
   9. MySQL application password for sympa
-　　
+
      <img src="images/sympa_016.JPG" width="70%">
-     
+
      任意のパスワードを設定してください
 
      【●●●●●】
@@ -297,7 +301,7 @@ AMI設定手順
  10. Password confirmation
 
      <img src="images/sympa_017.JPG" width="70%">
-     
+
      前項で設定したパスワードを再入力します。
 
      【●●●●●】
@@ -320,7 +324,7 @@ AMI設定手順
      <img src="images/sympa_018.JPG" width="70%">
 
      【http://amidesympa.example.org/wws】
-     
+
      ようこそ画面が表示されることを確認します。
 
      ----
@@ -328,7 +332,7 @@ AMI設定手順
   2. 右上のログインボタンをクリックし、ログイン画面に遷移します。
 
      <img src="images/sympa_019.JPG" width="70%">
-     
+
      画面下の【まだログインしたことがない】を選択します。
 
      [3-2](#section-3-2). Listmaster email address(es) で入力したメーリングリスト管理者のメールアドレスを入力し、
@@ -341,7 +345,7 @@ AMI設定手順
      <img src="images/sympa_020.JPG" width="70%">
 
      ※画像はサンプルです。
-     
+
      URLをクリックしてパスワード設定画面に遷移します。
 
      ----
@@ -352,5 +356,5 @@ AMI設定手順
 
 
      ----
-  
+
   以上で設定が完了します。
