@@ -121,3 +121,6 @@ AMI configuration procedure
 
      Thereafter, perform basic configuration of the Sympa and related software.
 
+  3. Launch web browser and access to web UI.
+     Follow "First login" link, input a listmaster address chosen on previous chapter, and then click "Send my password" button.
+     According to description in the email sent to that address, choose the password.
