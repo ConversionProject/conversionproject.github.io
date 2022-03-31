@@ -284,7 +284,7 @@ AMI設定手順
 
   1. Webブラウザから「手順[3-11](#section-3-11)」で設定したURLにアクセスします。
 
-     <img src="images/4-1.png" width="70%">
+     <img src="images/sympa_018.JPG" width="70%">
 
      【http://amidesympa.example.org/wws】
      
@@ -294,15 +294,9 @@ AMI設定手順
 
   2. 右上のログインボタンをクリックし、ログイン画面に遷移します。
 
-     <img src="images/4-2.png" width="70%">
+     <img src="images/sympa_019.JPG" width="70%">
      
      画面下の【まだログインしたことがない】を選択します。
-
-     ----
-
-  3. あなたのメールアドレス
-
-     ![図27]
 
      [3-2](#section-3-2). Listmaster email address(es) で入力したメーリングリスト管理者のメールアドレスを入力し、
      「初期パスワードの取り寄せ」ボタンをクリックします。
@@ -311,7 +305,7 @@ AMI設定手順
 
   4. メーリングリスト管理者宛てに初期パスワードが届きます。
 
-     <img src="images/4-4.png" width="70%">
+     <img src="images/sympa_020.JPG" width="70%">
 
      ※画像はサンプルです。
      
@@ -321,7 +315,7 @@ AMI設定手順
 
   5. メーリングリスト管理者のパスワードを設定します。
 
-     <img src="images/4-5.png" width="70%">
+     <img src="images/sympa_021.JPG" width="70%">
 
 
      ----
