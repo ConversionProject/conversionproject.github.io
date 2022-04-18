@@ -1,12 +1,18 @@
-\[[Japanese](./)\]
+---
+title: 'Sympa AMI: Prerequisites'
+---
+
+\[[Japanese](../ja/rerequisites.md)\]
 \[**English**\]
+
+\[[Sympa AMI](../en.md) &gt; Prerequisites\]
 
 
 Sympa AMI
 =========
 
 Prerequisites
-========
+-------------
 
 ## Hardware requirements
 
@@ -71,56 +77,3 @@ If Sympa is operated with multiple email domain names, these parameters are requ
 The same listmaster email address(es) can be set for all email domains.
 The web site URL prefix is required if you want to provide a web interface for that email domain. In this case, the prefixes for different email domains must not overlap.
 
-AMI information
-=======
-
-Release date: 2022-04-01
-
-  * AMI Name:
-
-    AMI de Sympa 2022-03-16_01 (Debian 11 AMD64)
-
-  * AMI ID:
-
-    ami-01b5f7f5d17362e0d
-
-  * Region:
-
-    us-east-2
-
-
-The next update is scheduled for Oct. 2022.
-
-Note:
-Currently, this AMI is only available in specific region. If you wish to use it in a region not listed above, please copy the AMI to your own region.
-
-AMI configuration procedure
-===========
-
-### 1. Launch instance from image
-
-  1. On EC2 Dashboard, select 'Image' > 'AMI' in the left pane.
-  2. Select 'Public Image' from the search box pull-down and enter AMI ID above.
-  3. Select the image and under 'Action' select 'Launch'.
-  4. Create an instance and set the security group according to your requirements.
-     Create the SSH key pair as necessity.
-  5. Once the created instance has been started, select 'Network & Security' > 'Elastic IP' in the left pane and associate the IP address with the instance.
-
-
-### 2. Initial configuration
-
-  1. Access to the instance via SSH. Note that the login user is 'admin'.
-
-     ----
-
-  2. Log in and a menu will appear.
-
-     <img src="images/sympa_001.JPG" width="70%">
-
-     Select "(Re)configure Sympa": Enter '1' and press Enter.
-
-     Thereafter, perform basic configuration of the Sympa and related software.
-
-  3. Launch web browser and access to web UI.
-     Follow "First login" link, input a listmaster address chosen on previous chapter, and then click "Send my password" button.
-     According to description in the email sent to that address, choose the password.
