@@ -12,7 +12,7 @@ Sympa AMI
 
 AMIリプレース手順
 -----------
-本手順は以下の前提で記載してます。
+本手順は下記前提で記載してます。
 
 ・新旧AMI間でリストのバックアップ/リストアに対応している。
 
@@ -21,6 +21,7 @@ AMIリプレース手順
 ・AMIリプレース時に既存インスタンスからIPの付け替えを行う。
 
 ・アーカイブ(書庫)のデータは移行しない。
+
 
 ---------
 ### 1. バックアップを取得
@@ -31,15 +32,11 @@ AMIリプレース手順
 
      「Create data dump for backup」を選択します。「D」を入力し、Enterキーを押します。
 
-     正常終了すると以下の様に表示されますので、キー入力を行い、メニューを表示させます。
-     
-     Backup file was created: /var/tmp/amidesympa-XXXXXXXXXXXXXX.tgz
-     
-     Transfer it to new server.
-     
-     Hit any key
-
      <img src="../images/sympa_replace_001.JPG" width="70%">
+
+     以下の様に表示されますので、キー入力を行い、メニューを表示させます。
+     
+     <img src="../images/sympa_replace_002.JPG" width="70%">
 
   3. バックアップファイル確認
 
@@ -49,7 +46,7 @@ AMIリプレース手順
      
      ls -l /var/tmp/amidesympa-XXXXXXXXXXXXXX.tgz
      
-     <img src="../images/sympa_replace_002.JPG" width="70%">
+     <img src="../images/sympa_replace_003.JPG" width="70%">
 
 ---------
 
@@ -74,16 +71,11 @@ AMIリプレース手順
      「Restore data dump」を選択します。「R」を入力し、Enterキーを押します。
         「Enter dump file name」と表示されたら転送したバックアップファイルをフルパスで入力し、Enterキーを押します。
 
-     <img src="../images/sympa_replace_003.JPG" width="70%">
+     <img src="../images/sympa_replace_004.JPG" width="70%">
 
-     正常終了すると以下の様に表示されますので、キー入力を行い、メニューを表示させます。
+     以下の様に表示されますので、キー入力を行い、メニューを表示させます。
      
-     Restoring finished.
-     
-     Launch shell, check configurations and restart services.
-     
-     Hit any key
-
+     <img src="../images/sympa_replace_005.JPG" width="70%">
 
 ---------
   以上でAMIのリプレースが完了します。
