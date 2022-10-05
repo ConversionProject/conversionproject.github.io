@@ -15,6 +15,6 @@ Sympa AMI
 
 * [AMI設定手順](ja/setup.md)
 
-* [リスト移行手順](ja/replace.md)
+* [AMIリプレース手順](ja/replace.md)
 
 
