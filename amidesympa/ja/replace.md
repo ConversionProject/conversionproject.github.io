@@ -69,7 +69,8 @@ AMIリプレース手順
   1. リプレース先のインスタンスにSSHでアクセスします。
   2. バックアップファイルからリスト
      「Restore data dump」を選択します。「R」を入力し、Enterキーを押します。
-        「Enter dump file name」と表示されたら転送したバックアップファイルをフルパスで入力し、Enterキーを押します。
+     
+     「Enter dump file name」と表示されたら転送したバックアップファイルをフルパスで入力し、Enterキーを押します。
 
      <img src="../images/sympa_replace_004.JPG" width="70%">
 
