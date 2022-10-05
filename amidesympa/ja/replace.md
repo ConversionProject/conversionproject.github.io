@@ -34,7 +34,7 @@ AMIリプレース手順
 
      <img src="../images/sympa_replace_001.JPG" width="70%">
 
-     以下の様に表示されますので、キー入力を行い、メニューを表示させます。
+     バックアップファイルが作成され、「Hit any key」と表示されますので、キー入力を行い、メニューを表示させます。
      
      <img src="../images/sympa_replace_002.JPG" width="70%">
 
@@ -73,7 +73,7 @@ AMIリプレース手順
 
      <img src="../images/sympa_replace_004.JPG" width="70%">
 
-     以下の様に表示されますので、キー入力を行い、メニューを表示させます。
+     リストアが完了し、「Hit any key」と表示されますので、キー入力を行い、メニューを表示させます。
      
      <img src="../images/sympa_replace_005.JPG" width="70%">
 
